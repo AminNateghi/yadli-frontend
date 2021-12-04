@@ -1,8 +1,8 @@
 import { Environment } from "src/app/shared/classes/environment";
-import * as ver from './../../package.json';
+import packageInfo from './../../package.json';
 
 export const environment: Environment = {
   production: true,
-  appVersion: ver.version,
+  appVersion: packageInfo.version,
   apiUrl: 'http://server-name.com/api'
 };
