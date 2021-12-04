@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
 
   loginClick() {
     if (!this.loginForm.valid) {
-      this.notify.error('Fill all items.')
+      this.notify.error('Fill all items.');
       return;
     }
 
@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
     }).toPromise().then((result) => {
       if (result.success) {
         localStorage.setItem('token', result.data);
-        this.router.navigate(['/home']);
+        this.router.navigate(['home']);
       } else {
         this.notify.info('Wrong data!');
       }
