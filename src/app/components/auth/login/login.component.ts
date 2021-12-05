@@ -12,7 +12,7 @@ import { AuthService } from '@app/shared/services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  loginForm: FormGroup = new FormGroup({});
+  form: FormGroup = new FormGroup({});
 
   constructor(
     private router: Router,
@@ -26,22 +26,22 @@ export class LoginComponent implements OnInit {
   }
 
   initField() {
-    this.loginForm = new FormGroup({
+    this.form = new FormGroup({
       userName: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required]),
     });
   }
 
   loginClick() {
-    if (!this.loginForm.valid) {
+    if (!this.form.valid) {
       this.notify.error('Fill all items.');
       return;
     }
 
     this.spinner.show();
     this.authService.login({
-      email: this.loginForm.controls.inputUserName.value.trim(),
-      password: this.loginForm.controls.inputPassword.value
+      email: this.form.controls.inputUserName.value.trim(),
+      password: this.form.controls.inputPassword.value
     }).toPromise().then((result) => {
       if (result.success) {
         localStorage.setItem('token', result.data);
