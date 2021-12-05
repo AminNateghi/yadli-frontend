@@ -10,13 +10,13 @@
               <form [formGroup]="loginForm">
                 <div class="form-label-group mb-3">
                   <label for="inputEmail">Email</label>
-                  <input type="email" id="inputEmail" class="form-control" formControlName="inputUserName" required
+                  <input type="email" id="inputEmail" class="form-control" formControlName="userName" required
                   autofocus>
                 </div>
 
                 <div class="form-label-group mb-4">
                   <label for="inputPassword">Password</label>
-                  <input type="password" id="inputPassword" class="form-control" formControlName="inputPassword"
+                  <input type="password" id="inputPassword" class="form-control" formControlName="password"
                   required>
                 </div>
 
@@ -29,7 +29,7 @@
 
                 <div class="row">
                   <button class="btn btn-default btn-block btn-login mb-2" type="submit"
-                  (click)="registerClick()">create a new account</button>
+                  (click)="registerClick()">No account? <strong>Create one</strong></button>
                 </div>
 
               </form>
