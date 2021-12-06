@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './infrastructure/guard/auth.guard';
 import { LayoutEmptyComponent } from './infrastructure/layouts/layout-empty/layout-empty.component';
 import { LayoutMainComponent } from './infrastructure/layouts/layout-main/layout-main.component';
+import { AuthService } from './shared/services/auth.service';
 
 const routes: Routes = [
   {
@@ -31,6 +32,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthService]
 })
 export class AppRoutingModule { }
