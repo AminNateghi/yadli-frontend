@@ -26,7 +26,7 @@ export class AuthGuard implements CanActivate {
   }
 
   private async checkToken(token: string) {
-    return await this.authService.verify(token).toPromise().then(result => {
+    return await this.authService.verify({ token }).toPromise().then(result => {
       return result.success;
     });
   }

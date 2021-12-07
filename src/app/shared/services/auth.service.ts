@@ -6,6 +6,7 @@ import { environment } from "@environments/environment";
 import { ResponseBase, ResponseBaseWithData } from "@app/shared/classes/response-base";
 import { Login } from "../models/login.model";
 import { Register } from "../models/register.model";
+import { Verify } from "../models/verify.model";
 
 @Injectable()
 export class AuthService {
@@ -24,7 +25,7 @@ export class AuthService {
     return this.http.post<ResponseBaseWithData<any>>(`${this.api}/register`, model);
   }
 
-  verify(token: string): Observable<ResponseBase> {
+  verify(token: Verify): Observable<ResponseBase> {
     return this.http.post<any>(`${this.api}/verify`, token);
   }
 
