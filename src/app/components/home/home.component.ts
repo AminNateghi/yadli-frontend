@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from '../../shared/services/shared.service';
 
 @Component({
   selector: 'app-home',
@@ -8,8 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   constructor(
+    private sharedService: SharedService,
   ) { }
 
   ngOnInit(): void {
+    this.sharedService.toolbarState.next({ title: 'YADLI' });
   }
 }
