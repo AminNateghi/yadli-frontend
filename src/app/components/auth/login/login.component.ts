@@ -40,14 +40,15 @@ export class LoginComponent implements OnInit {
 
     this.spinner.show();
     this.authService.login({
-      email: this.form.controls.inputUserName.value.trim(),
-      password: this.form.controls.inputPassword.value
+      email: this.form.controls.userName.value.trim(),
+      password: this.form.controls.password.value
     }).toPromise().then((result) => {
       if (result.success) {
         localStorage.setItem('token', result.data);
         this.router.navigate(['home']);
       } else {
-        this.notify.info('Wrong data!');
+        localStorage.removeItem('token');
+        this.notify.info(result.message);
       }
     }).finally(() => {
       this.spinner.hide();
