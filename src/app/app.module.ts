@@ -30,7 +30,7 @@ import { HeaderComponent } from './shared/modules/header/header.component';
     NgxSpinnerModule,
     ToastrModule.forRoot({
       timeOut: 7000,
-      positionClass: 'toast-top-center',
+      positionClass: 'toast-bottom-center',
       preventDuplicates: true
     }),
   ],
