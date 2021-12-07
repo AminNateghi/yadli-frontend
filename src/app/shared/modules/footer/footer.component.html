@@ -1,11 +1,11 @@
-<nav class="navbar fixed-bottom navbar-light bg-light">
-  <a class="btn btn-link" [routerLink]="['/profile']">
+<nav class="navbar fixed-bottom navbar-light bg-light justify-content-around">
+  <a class="btn btn-link" (click)="gotoClick(['profile' , 'view'])">
     <img src="/assets/images/user.svg" width="24">
   </a>
-  <a class="item-center btn btn-link" [routerLink]="['/home']">
+  <a class="item-center btn btn-link" (click)="gotoClick(['home'])">
     <img src="/assets/images/home.svg" width="30">
   </a>
-  <a class="btn btn-link" [routerLink]="['/setting']">
+  <a class="btn btn-link" (click)="gotoClick(['settings'])">
     <img src="/assets/images/settings.svg" width="24">
   </a>
 </nav>
