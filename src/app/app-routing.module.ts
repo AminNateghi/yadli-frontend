@@ -22,6 +22,12 @@ const routes: Routes = [
     component: LayoutEmptyComponent,
     loadChildren: () => import('./components/auth/signup/signup.module').then(m => m.SignUpModule)
   },
+  {
+    path: 'profile',
+    component: LayoutMainComponent,
+    loadChildren: () => import('./components/profile/profile.module').then(m => m.ProfileModule),
+    canActivate: [AuthGuard]
+  },
 
   // default page
   { path: '', redirectTo: '/home', pathMatch: 'full' },
