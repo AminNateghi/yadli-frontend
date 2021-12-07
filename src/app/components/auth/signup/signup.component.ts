@@ -46,7 +46,7 @@ export class SignUpComponent implements OnInit {
       password: this.form.controls.password.value
     }).toPromise().then((result) => {
       if (result.success) {
-        this.notify.success('Welcome');
+        this.notify.success('Registration is complete, Please login.');
         this.router.navigate(['home']);
       } else {
         this.notify.info(result.message);
