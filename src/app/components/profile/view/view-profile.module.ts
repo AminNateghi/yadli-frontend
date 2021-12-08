@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ViewProfileComponent } from './view-profile.component';
+import { UserService } from '@app/shared/services/user.service';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
   ],
   providers: [
+    UserService
   ]
 })
 export class ViewProfileModule { }
