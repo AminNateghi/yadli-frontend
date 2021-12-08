@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -8,6 +8,7 @@ import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { JwtInterceptor } from './infrastructure/interceptor/jwt.Interceptor';
 import { LayoutEmptyComponent } from './infrastructure/layouts/layout-empty/layout-empty.component';
 import { LayoutMainComponent } from './infrastructure/layouts/layout-main/layout-main.component';
 import { FooterComponent } from './shared/modules/footer/footer.component';
@@ -34,7 +35,9 @@ import { HeaderComponent } from './shared/modules/header/header.component';
       preventDuplicates: true
     }),
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
