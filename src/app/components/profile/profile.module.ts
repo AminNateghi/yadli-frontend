@@ -7,6 +7,10 @@ const routes: Routes = [
     path: 'view',
     loadChildren: () => import('./view/view-profile.module').then(m => m.ViewProfileModule)
   },
+  {
+    path: 'edit',
+    loadChildren: () => import('./edit/edit-profile.module').then(m => m.EditProfileModule)
+  },
 ];
 
 @NgModule({
