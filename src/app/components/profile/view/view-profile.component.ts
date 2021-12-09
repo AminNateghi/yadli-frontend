@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserInfo } from '@app/shared/models/user-info.model';
 import { SharedService } from '@app/shared/services/shared.service';
 import { UserService } from '@app/shared/services/user.service';
@@ -13,12 +14,13 @@ export class ViewProfileComponent implements OnInit {
   user: UserInfo = new UserInfo();
 
   constructor(
+    private router: Router,
     private sharedService: SharedService,
     private userService: UserService
   ) { }
 
   ngOnInit(): void {
-    this.sharedService.toolbarState.next({ title: 'YADLI', showMenuButton: true });
+    this.sharedService.toolbarState.next({ title: 'Profile' });
     this.getData();
   }
 
@@ -28,5 +30,9 @@ export class ViewProfileComponent implements OnInit {
         this.user = result.data;
       }
     })
+  }
+
+  editClick() {
+    this.router.navigate(['profile', 'edit']);
   }
 }
