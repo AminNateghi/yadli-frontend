@@ -1,5 +1,10 @@
 /* Importing Bootstrap SCSS file. */
-@import "~bootstrap/scss/bootstrap";
+// @import "~bootstrap/scss/bootstrap";
+
+// importing tailwindcss
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 // regular style toast
 @import "~ngx-toastr/toastr";
