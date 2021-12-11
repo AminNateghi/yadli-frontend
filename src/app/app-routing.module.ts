@@ -7,6 +7,12 @@ import { AuthService } from './shared/services/auth.service';
 
 const routes: Routes = [
   {
+    path: 'ui',
+    component: LayoutMainComponent,
+    loadChildren: () => import('./components/ui/ui.module').then(m => m.UiModule),
+    canActivate: [AuthGuard]
+  },
+  {
     path: 'home',
     component: LayoutMainComponent,
     loadChildren: () => import('./components/home/home.module').then(m => m.HomeModule),
