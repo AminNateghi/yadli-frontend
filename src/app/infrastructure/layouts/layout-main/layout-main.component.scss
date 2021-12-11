@@ -1,0 +1,7 @@
+.body {
+  @apply flex flex-col m-auto min-h-screen md:max-w-prose;
+}
+
+.body-main {
+  @apply flex-grow p-3 sm:p-2;
+}
