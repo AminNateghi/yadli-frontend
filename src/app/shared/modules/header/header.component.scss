@@ -1,8 +1,11 @@
-.navbar-brand {
-  margin-right: 0;
-  margin-left: 10px;
+.navbar {
+  @apply flex items-center h-12 pt-2 pb-2 pl-3 bg-slate-100 shadow-sm md:p-4 md:h-16;
 }
 
-.btn-link {
-  margin-right: 10px;
+.navbar-brand {
+  @apply text-lg flex-1;
+}
+
+.navbar-btn {
+  @apply pr-2;
 }
