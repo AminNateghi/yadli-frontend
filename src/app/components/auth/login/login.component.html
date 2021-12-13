@@ -1,42 +1,15 @@
-<div class="container-fluid">
-  <div class="row no-gutter">
-    <div class="col-md-12 col-lg-6">
-      <div class="login d-flex align-items-center py-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-9 col-lg-8 mx-auto">
-              <h3 class="login-heading mb-4 text-center">Welcome back.
-              </h3>
-              <form [formGroup]="form">
-                <div class="form-label-group mb-3">
-                  <label for="inputEmail">Email</label>
-                  <input type="email" id="inputEmail" class="form-control" formControlName="userName" required
-                  autofocus>
-                </div>
-
-                <div class="form-label-group mb-4">
-                  <label for="inputPassword">Password</label>
-                  <input type="password" id="inputPassword" class="form-control" formControlName="password"
-                  required>
-                </div>
-
-                <button class="btn btn-lg btn-primary btn-block btn-login font-weight-bold mb-2" type="submit"
-                (click)="loginClick()">sign in</button>
-
-                <div class="text-center">
-                  <a class="small" href="#">Forgot password?</a>
-                </div>
-
-                <div class="row">
-                  <button class="btn btn-default btn-block btn-login mb-2" type="submit"
-                  (click)="registerClick()">No account? <strong>Create one</strong></button>
-                </div>
-
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="login-page">
+  <div class="login-page__content">
+    <div class="text-black mt-10">
+      <h1 class="font-bold text-4xl">Welcome back.</h1>
+      <p class="font-semibold">Let's login!</p>
     </div>
+    <form class="flex flex-col space-y-8 mt-10">
+      <input type="text" placeholder="User Name / Email" formControlName="userName" required autofocus
+      class="input">
+      <input type="password" placeholder="Password" formControlName="password" required
+      class="input">
+      <button class="btn-primary" (click)="loginClick()">Sign in</button>
+    </form>
   </div>
 </div>
