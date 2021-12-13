@@ -1,0 +1,12 @@
+.login-page {
+  @apply flex items-center justify-center h-screen;
+
+  &__content {
+    @apply flex flex-col w-80 px-3 py-10;
+  }
+}
+
+.input {
+  @apply border rounded-lg py-3 px-3 bg-gray-100 border-gray-400 placeholder-gray-500;
+  @apply focus:border-gray-800;
+}
