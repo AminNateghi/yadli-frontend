@@ -4,7 +4,7 @@
       <h1 class="font-bold text-4xl">Welcome back.</h1>
       <p class="font-semibold">Let's login!</p>
     </div>
-    <form class="flex flex-col space-y-8 mt-10">
+    <form [formGroup]="form" class="flex flex-col space-y-8 mt-10">
       <input type="text" placeholder="User Name / Email" formControlName="userName" required autofocus
       class="input">
       <input type="password" placeholder="Password" formControlName="password" required
