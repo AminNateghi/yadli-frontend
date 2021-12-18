@@ -8,3 +8,11 @@
     @apply text-sm text-zinc-500;
   }
 }
+
+.row {
+  @apply flex;
+
+  .add-vehicle {
+    @apply w-full mt-3;
+  }
+}

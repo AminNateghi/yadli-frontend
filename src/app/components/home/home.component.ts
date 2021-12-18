@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Vehicle } from '@app/shared/models/vehicle.model';
+import { VehicleService } from '@app/shared/services/vehicle.service';
 import { SharedService } from '../../shared/services/shared.service';
 
 @Component({
@@ -8,11 +10,23 @@ import { SharedService } from '../../shared/services/shared.service';
 })
 export class HomeComponent implements OnInit {
 
+  vehicles: Vehicle[] = [];
+
   constructor(
     private sharedService: SharedService,
+    private vehicleService: VehicleService
   ) { }
 
   ngOnInit(): void {
     this.sharedService.toolbarState.next({ title: 'YADLI' });
+    this.getData();
+  }
+
+  getData() {
+    this.vehicleService.getAll().subscribe(result => {
+      if (result.success) {
+        this.vehicles = result.data;
+      }
+    });
   }
 }
