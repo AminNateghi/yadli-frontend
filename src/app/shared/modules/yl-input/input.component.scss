@@ -1,0 +1,27 @@
+.yl_input {
+  @apply flex flex-row items-center h-12 w-full px-3 py-0 mb-1 rounded-xl bg-white border-2 border-solid border-gray-400 shadow-inner;
+
+  &.has-error {
+    @apply border-2 border-solid border-red-600;
+  }
+
+  &.focused {
+    @apply border-black transition duration-300 ease-in;
+  }
+
+  &__input {
+    @apply border-none flex-1 text-right text-black bg-white text-base w-full;
+  }
+
+  &__title {
+    @apply text-left text-gray-500 text-sm;
+
+    &.has-error {
+      @apply text-red-700;
+    }
+  }
+
+  input::placeholder {
+    @apply text-gray-400;
+  }
+}
