@@ -1,19 +1,19 @@
 .btn-primary {
-  @apply mx-1 py-2 px-3 bg-blue-500 rounded-lg text-white;
+  @apply mx-1 mb-1 py-2 px-3 bg-blue-500 rounded-lg text-white;
   @apply disabled:bg-neutral-300 disabled:text-neutral-400;
 }
 
 .btn-border {
-  @apply mx-1 py-2 px-3 bg-neutral-100 rounded-lg text-blue-500 border-solid border-2 border-blue-600;
+  @apply mx-1 mb-1 py-2 px-3 bg-neutral-100 rounded-lg text-blue-500 border-solid border-2 border-blue-600;
   @apply disabled:bg-neutral-300 disabled:text-neutral-400;
 }
 
 .btn-agree {
-  @apply mx-1 py-2 px-3 bg-green-600 rounded-lg text-white;
+  @apply mx-1 mb-1 py-2 px-3 bg-green-600 rounded-lg text-white;
   @apply disabled:bg-neutral-300 disabled:text-neutral-400;
 }
 
 .btn-default {
-  @apply mx-1 py-2 px-3 bg-white rounded-lg text-gray-800;
+  @apply mx-1 mb-1 py-2 px-3 bg-white rounded-lg text-gray-800;
   @apply disabled:bg-neutral-300 disabled:text-neutral-400;
 }
