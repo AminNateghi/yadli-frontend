@@ -3,3 +3,11 @@
 <button class="btn-border">Border button</button>
 <button class="btn-agree">Green button</button>
 <button class="btn-default">Default button</button>
+
+<hr>
+
+<app-input></app-input>
+<app-input [title]="'Name'" [placeholder]="'exp: My BMW'" [required]="true" [value]="''"></app-input>
+<app-input [title]="'Name:'" [showColon]="false" [placeholder]="'exp: My BMW'" [required]="true" [value]="'value'">
+</app-input>
+<app-input formControlName="fuelType" [title]="'Fuel type:'" [type]="'dropdown'"></app-input>
