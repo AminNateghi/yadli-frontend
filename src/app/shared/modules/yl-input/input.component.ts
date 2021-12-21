@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, forwardRef, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, forwardRef, Input, Output, ViewChild } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -13,7 +13,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     }
   ]
 })
-export class InputComponent implements OnInit, ControlValueAccessor {
+export class InputComponent implements ControlValueAccessor {
 
   @Input() title: string = '';
   @Input() placeholder: string = '';
@@ -35,12 +35,6 @@ export class InputComponent implements OnInit, ControlValueAccessor {
 
   onChange: any = () => { };
   onTouched: any = () => { };
-
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
 
   writeValue(obj: any): void {
     this.value = obj;

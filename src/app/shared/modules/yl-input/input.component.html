@@ -1,14 +1,14 @@
 <div class="yl_input"
 [ngClass]="[hasError ? 'has-error' : '', focused ? 'focused' : '']">
   <div class="yl_input__title" [ngClass]="[hasError ? 'has-error' : '']" (click)="focusToInput()">
-    {{title}}{{required?'*': ''}}{{showColon?':':''}}</div>
+    {{title}}{{showColon?':':''}}{{required?'*': ''}}</div>
   <input class="yl_input__input"
   [attr.placeholder]="hasError ? '' : placeholder "
   [attr.value]="value"
   [attr.formControlName]="formControlName ? formControlName : ''"
-  [readonly]="type == 'dropdown'"
+  [readonly]="type === 'dropdown'"
   [disabled]="disabled"
-  (click)="type == 'dropdown' ? openDropdown() : null"
+  (click)="type === 'dropdown' ? openDropdown() : null"
   (keyup)="checkValue($event)"
   (focus)="focusChange(true)"
   (blur)="focusChange(false)"
