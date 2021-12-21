@@ -34,6 +34,12 @@ const routes: Routes = [
     loadChildren: () => import('./components/profile/profile.module').then(m => m.ProfileModule),
     canActivate: [AuthGuard]
   },
+  {
+    path: 'vehicle',
+    component: LayoutMainComponent,
+    loadChildren: () => import('./components/vehicle/vehicle.module').then(m => m.VehicleModule),
+    canActivate: [AuthGuard]
+  },
 
   // default page
   { path: '', redirectTo: '/home', pathMatch: 'full' },

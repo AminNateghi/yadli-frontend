@@ -1,0 +1,11 @@
+<form [formGroup]="form">
+  <app-input formControlName="name" [title]="'Vehicle name'" [required]="true"></app-input>
+  <app-input formControlName="brandName" [title]="'Brand name'"></app-input>
+  <app-input formControlName="modelName" [title]="'Model name'"></app-input>
+  <app-input formControlName="year" [title]="'Year'"></app-input>
+  <app-input formControlName="fuelType" [title]="'Fuel type'" [type]="'dropdown'"></app-input>
+  <app-input formControlName="licenseNo" [title]="'License No'"></app-input>
+  <app-input formControlName="vin" [title]="'VIN'"></app-input>
+  <app-input formControlName="description" [title]="'Notes'"></app-input>
+
+</form>
