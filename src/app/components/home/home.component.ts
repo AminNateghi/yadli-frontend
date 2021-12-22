@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Vehicle } from '@app/shared/models/vehicle.model';
 import { VehicleService } from '@app/shared/services/vehicle.service';
 import { SharedService } from '../../shared/services/shared.service';
@@ -13,6 +14,7 @@ export class HomeComponent implements OnInit {
   vehicles: Vehicle[] = [];
 
   constructor(
+    private router: Router,
     private sharedService: SharedService,
     private vehicleService: VehicleService
   ) { }
@@ -28,5 +30,9 @@ export class HomeComponent implements OnInit {
         this.vehicles = result.data;
       }
     });
+  }
+
+  addVehicleClick() {
+    this.router.navigate(['vehicle', 'add']);
   }
 }

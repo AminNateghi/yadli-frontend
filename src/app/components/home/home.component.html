@@ -4,5 +4,5 @@
 </div>
 
 <div class="row">
-  <button *ngIf="vehicles.length === 0" class="btn-primary add-vehicle">Add vehicle</button>
+  <button *ngIf="vehicles.length === 0" class="btn-primary add-vehicle" (click)="addVehicleClick()">Add vehicle</button>
 </div>
