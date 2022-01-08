@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 import { UiComponent } from './ui.component';
-import { InputModule } from '@app/shared/modules/yl-input/input.module';
+import { YlTextBoxModule } from '@app/shared/modules/yl-text-box/text-box.module';
 
 const routes: Routes = [
   {
@@ -19,7 +19,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    InputModule
+    YlTextBoxModule
   ],
   providers: [
   ]

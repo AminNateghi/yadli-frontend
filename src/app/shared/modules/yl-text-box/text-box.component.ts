@@ -2,31 +2,30 @@ import { Component, ElementRef, EventEmitter, forwardRef, Input, Output, ViewChi
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-  selector: 'app-input',
-  templateUrl: './input.component.html',
-  styleUrls: ['./input.component.scss'],
+  selector: 'app-text-box',
+  templateUrl: './text-box.component.html',
+  styleUrls: ['./text-box.component.scss'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
       multi: true,
-      useExisting: forwardRef(() => InputComponent),
+      useExisting: forwardRef(() => YlTextBoxComponent),
     }
   ]
 })
-export class InputComponent implements ControlValueAccessor {
+export class YlTextBoxComponent implements ControlValueAccessor {
 
   @Input() title: string = '';
   @Input() placeholder: string = '';
+  @Input() value: string = '';
+  @Input() formControlName: string = '';
   @Input() readonly: boolean = false;
   @Input() disabled: boolean = false;
-  @Input() value: string = '';
   @Input() required: boolean = false;
-  @Input() type: 'input' | 'dropdown' = 'input';
-  @Input() formControlName: string = '';
   @Input() showColon: boolean = true;
 
   @Output() valueChange = new EventEmitter<string>()
-  @Output() modalClick = new EventEmitter<boolean>();
+  @Output() selectClick = new EventEmitter<boolean>();
 
   @ViewChild('ylInput') input: ElementRef | undefined;
 
@@ -63,8 +62,8 @@ export class InputComponent implements ControlValueAccessor {
     this.input?.nativeElement.focus();
   }
 
-  openDropdown() {
-    this.modalClick.emit(true);
+  openDropdownClick() {
+    this.selectClick.emit(true);
   }
 
 }

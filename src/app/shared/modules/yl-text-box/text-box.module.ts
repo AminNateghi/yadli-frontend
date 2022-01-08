@@ -1,16 +1,16 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { InputComponent } from "./input.component";
+import { YlTextBoxComponent } from "./text-box.component";
 
 @NgModule({
   declarations: [
-    InputComponent
+    YlTextBoxComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    InputComponent
+    YlTextBoxComponent
   ]
 })
-export class InputModule { }
+export class YlTextBoxModule { }

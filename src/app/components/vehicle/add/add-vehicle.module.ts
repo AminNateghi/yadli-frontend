@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AddVehicleComponent } from './add-vehicle.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { VehicleService } from '@app/shared/services/vehicle.service';
-import { InputModule } from '@app/shared/modules/yl-input/input.module';
+import { YlTextBoxModule } from '@app/shared/modules/yl-text-box/text-box.module';
 
 const routes: Routes = [
   {
@@ -21,7 +21,7 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     ReactiveFormsModule,
-    InputModule
+    YlTextBoxModule
   ],
   providers: [
     VehicleService

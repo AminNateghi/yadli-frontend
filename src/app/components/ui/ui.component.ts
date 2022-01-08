@@ -15,4 +15,8 @@ export class UiComponent implements OnInit {
   ngOnInit(): void {
     this.sharedService.toolbarState.next({ title: 'Design system' });
   }
+
+  openModal() {
+
+  }
 }
