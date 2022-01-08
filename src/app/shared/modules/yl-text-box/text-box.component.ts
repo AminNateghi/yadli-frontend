@@ -27,7 +27,7 @@ export class YlTextBoxComponent implements ControlValueAccessor {
   @Output() valueChange = new EventEmitter<string>()
   @Output() selectClick = new EventEmitter<boolean>();
 
-  @ViewChild('ylInput') input: ElementRef | undefined;
+  @ViewChild('ylTextBox') input: ElementRef | undefined;
 
   hasError = false;
   focused = false;
