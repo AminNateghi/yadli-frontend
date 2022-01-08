@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { UiComponent } from './ui.component';
 import { YlTextBoxModule } from '@app/shared/modules/yl-text-box/text-box.module';
+import { YlSelectBoxModule } from '@app/shared/modules/yl-select-box/select-box.module';
 
 const routes: Routes = [
   {
@@ -19,7 +20,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    YlTextBoxModule
+    YlTextBoxModule,
+    YlSelectBoxModule
   ],
   providers: [
   ]

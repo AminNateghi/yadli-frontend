@@ -1,0 +1,21 @@
+<div class="yl_text-box"
+[ngClass]="[hasError ? 'has-error' : '', focused ? 'focused' : '']">
+  <div class="yl_text-box__title"
+  [ngClass]="[hasError ? 'has-error' : '']"
+  (click)="focusToInput()">
+    {{title}}{{showColon?':':''}}{{required?'*': ''}}
+  </div>
+
+  <select
+  class="yl_text-box__input"
+  [attr.placeholder]="hasError ? '' : placeholder "
+  [attr.value]="value"
+  [attr.formControlName]="formControlName ? formControlName : ''"
+  [disabled]="disabled"
+  (keyup)="checkValue($event)"
+  (focus)="focusChange(true)"
+  (blur)="focusChange(false)"
+  #ylSelectBox>
+    <option *ngFor="let item of list" [value]="item.key">{{item.value}}</option>
+  </select>
+</div>
