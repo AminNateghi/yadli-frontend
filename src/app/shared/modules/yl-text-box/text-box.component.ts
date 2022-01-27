@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, forwardRef, Input, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -9,7 +9,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     {
       provide: NG_VALUE_ACCESSOR,
       multi: true,
-      useExisting: forwardRef(() => YlTextBoxComponent),
+      useExisting: YlTextBoxComponent
     }
   ]
 })
@@ -18,25 +18,25 @@ export class YlTextBoxComponent implements ControlValueAccessor {
   @Input() title: string = '';
   @Input() placeholder: string = '';
   @Input() value: string = '';
-  @Input() formControlName: string = '';
   @Input() readonly: boolean = false;
   @Input() disabled: boolean = false;
   @Input() required: boolean = false;
   @Input() showColon: boolean = true;
 
   @Output() valueChange = new EventEmitter<string>()
-  @Output() selectClick = new EventEmitter<boolean>();
 
-  @ViewChild('ylTextBox') input: ElementRef | undefined;
+  @ViewChild('ylTextBox') element: ElementRef | undefined;
 
   hasError = false;
   focused = false;
 
+  //#region ControlValueAccessor 
+
   onChange: any = () => { };
   onTouched: any = () => { };
 
-  writeValue(obj: any): void {
-    this.value = obj;
+  writeValue(value: any): void {
+    this.value = value;
   }
 
   registerOnChange(fn: any): void {
@@ -47,23 +47,32 @@ export class YlTextBoxComponent implements ControlValueAccessor {
     this.onTouched = fn;
   }
 
+  //#endregion
+
 
   checkValue(event: KeyboardEvent) {
     const value = String(event.key);
     this.hasError = this.required && value.length == 0;
-    this.valueChange.emit(value);
+    const inputValue = this.element?.nativeElement.value;
+    this.onChange(inputValue);
+    this.valueChange.emit(inputValue);
   }
 
   focusChange(value: boolean) {
+    this.markAsTouched();
     this.focused = value;
   }
 
   focusToInput() {
-    this.input?.nativeElement.focus();
+    this.markAsTouched();
+    this.element?.nativeElement.focus();
   }
 
-  openDropdownClick() {
-    this.selectClick.emit(true);
+  markAsTouched() {
+    if (!this.focused) {
+      this.onTouched();
+      this.focused = true;
+    }
   }
 
 }

@@ -10,9 +10,8 @@
   class="yl_text-box__input"
   [attr.placeholder]="hasError ? '' : placeholder "
   [attr.value]="value"
-  [attr.formControlName]="formControlName ? formControlName : ''"
   [disabled]="disabled"
-  (keyup)="checkValue($event)"
+  (change)="eventChange()"
   (focus)="focusChange(true)"
   (blur)="focusChange(false)"
   #ylSelectBox>

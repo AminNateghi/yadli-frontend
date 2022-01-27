@@ -10,7 +10,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     {
       provide: NG_VALUE_ACCESSOR,
       multi: true,
-      useExisting: forwardRef(() => YlSelectBoxComponent),
+      useExisting: YlSelectBoxComponent
     }
   ]
 })
@@ -19,7 +19,6 @@ export class YlSelectBoxComponent implements ControlValueAccessor {
   @Input() title: string = '';
   @Input() placeholder: string = '';
   @Input() value: string = '';
-  @Input() formControlName: string = '';
   @Input() list: KeyValue<string, string>[] = [];
   @Input() disabled: boolean = false;
   @Input() required: boolean = false;
@@ -27,16 +26,18 @@ export class YlSelectBoxComponent implements ControlValueAccessor {
 
   @Output() valueChange = new EventEmitter<string>()
 
-  @ViewChild('ylSelectBox') input: ElementRef | undefined;
+  @ViewChild('ylSelectBox') element: ElementRef | undefined;
 
   hasError = false;
   focused = false;
 
+  //#region ControlValueAccessor
+
   onChange: any = () => { };
   onTouched: any = () => { };
 
-  writeValue(obj: any): void {
-    this.value = obj;
+  writeValue(value: any): void {
+    this.value = value;
   }
 
   registerOnChange(fn: any): void {
@@ -47,20 +48,31 @@ export class YlSelectBoxComponent implements ControlValueAccessor {
     this.onTouched = fn;
   }
 
+  //#endregion 
 
-  checkValue(event: KeyboardEvent) {
-    const value = String(event.key);
-    this.hasError = this.required && value.length == 0;
-    this.valueChange.emit(value);
-  }
 
   focusChange(value: boolean) {
     this.focused = value;
+    this.markAsTouched();
   }
 
   focusToInput() {
-    this.input?.nativeElement.focus();
+    this.markAsTouched();
+    this.element?.nativeElement.focus();
   }
 
+  eventChange() {
+    const value = this.element?.nativeElement.value;
+    console.log(value);
 
+    this.onChange(value);
+    this.valueChange.emit(value);
+  }
+
+  markAsTouched() {
+    if (!this.focused) {
+      this.onTouched();
+      this.focused = true;
+    }
+  }
 }
