@@ -1,8 +1,12 @@
 <form [formGroup]="form">
+
+  <app-heading [title]="'Vehicle info'"></app-heading>
   <app-text-box formControlName="name" [title]="'Vehicle name'" [required]="true"></app-text-box>
   <app-text-box formControlName="brandName" [title]="'Brand name'"></app-text-box>
   <app-text-box formControlName="modelName" [title]="'Model name'"></app-text-box>
   <app-text-box formControlName="year" [title]="'Year'"></app-text-box>
+
+  <app-heading [title]="'Vehicle details'"></app-heading>
   <app-select-box formControlName="fuelType" [title]="'Fuel type'" [list]="fuelType"></app-select-box>
   <app-text-box formControlName="licenseNo" [title]="'License No'"></app-text-box>
   <app-text-box formControlName="vin" [title]="'VIN'"></app-text-box>
