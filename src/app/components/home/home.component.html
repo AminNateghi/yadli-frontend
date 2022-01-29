@@ -6,20 +6,15 @@
       <img alt="" src="/assets/images/vehicle.png">
       <p>The car list is empty.</p>
     </div>
-
-    <div class="row">
-      <button class="btn-primary add-vehicle" (click)="addVehicleClick()">Add
-        vehicle</button>
-    </div>
   </ng-template>
 
+  <div class="row">
+    <button class="btn-primary add-vehicle" (click)="addVehicleClick()">
+      Add vehicle
+    </button>
+  </div>
+
   <ng-template [ngIf]="vehicles.length > 0">
-    <div class="row">
-      <button class="btn-primary add-vehicle" (click)="addVehicleClick()">Add
-        vehicle</button>
-    </div>
-    <p *ngFor="let item of vehicles">
-      {{item.name}}
-    </p>
+    <app-vehicle-box *ngFor="let item of vehicles" [title]="item.name"></app-vehicle-box>
   </ng-template>
 </div>

@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { VehicleService } from '@app/shared/services/vehicle.service';
 import { LoadingModule } from '@app/shared/modules/loading/loading.module';
+import { YlVehicleBoxModule } from '@app/shared/modules/yl-vehicle-box/vehicle-box.module';
 
 const routes: Routes = [
   {
@@ -20,7 +21,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    LoadingModule
+    LoadingModule,
+    YlVehicleBoxModule
   ],
   providers: [
     VehicleService
