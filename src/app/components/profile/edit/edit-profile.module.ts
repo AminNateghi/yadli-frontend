@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { EditProfileComponent } from './edit-profile.component';
 import { UserService } from '@app/shared/services/user.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { YlHeadingModule } from '@app/shared/modules/yl-heading/heading.module';
+import { YlTextBoxModule } from '@app/shared/modules/yl-text-box/text-box.module';
 
 const routes: Routes = [
   {
@@ -19,7 +21,9 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    YlHeadingModule,
+    YlTextBoxModule
   ],
   providers: [
     UserService
