@@ -4,7 +4,7 @@ import { Observable } from "rxjs";
 
 import { environment } from "@environments/environment";
 import { ResponseBase, ResponseBaseWithData } from "@app/shared/classes/response-base";
-import { Vehicle } from "../models/vehicle.model";
+import { VehicleAdd, VehicleBase } from "../models/vehicle.model";
 
 @Injectable()
 export class VehicleService {
@@ -15,11 +15,11 @@ export class VehicleService {
     private http: HttpClient
   ) { }
 
-  getAll(): Observable<ResponseBaseWithData<Vehicle[]>> {
+  getAll(): Observable<ResponseBaseWithData<VehicleBase[]>> {
     return this.http.get<any>(`${this.api}`);
   }
 
-  create(model: any): Observable<ResponseBase> {
+  create(model: VehicleAdd): Observable<ResponseBase> {
     return this.http.post<any>(`${this.api}`, model);
   }
 

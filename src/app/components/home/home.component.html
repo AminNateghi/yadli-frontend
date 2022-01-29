@@ -1,8 +1,25 @@
-<div *ngIf="vehicles.length === 0" class="card">
-  <img alt="" src="/assets/images/vehicle.png">
-  <p>The car list is empty.</p>
-</div>
+<app-loading *ngIf="isLoading"></app-loading>
 
-<div class="row">
-  <button *ngIf="vehicles.length === 0" class="btn-primary add-vehicle" (click)="addVehicleClick()">Add vehicle</button>
+<div *ngIf="!isLoading">
+  <ng-template [ngIf]="vehicles.length === 0">
+    <div class="card">
+      <img alt="" src="/assets/images/vehicle.png">
+      <p>The car list is empty.</p>
+    </div>
+
+    <div class="row">
+      <button class="btn-primary add-vehicle" (click)="addVehicleClick()">Add
+        vehicle</button>
+    </div>
+  </ng-template>
+
+  <ng-template [ngIf]="vehicles.length > 0">
+    <div class="row">
+      <button class="btn-primary add-vehicle" (click)="addVehicleClick()">Add
+        vehicle</button>
+    </div>
+    <p *ngFor="let item of vehicles">
+      {{item.name}}
+    </p>
+  </ng-template>
 </div>

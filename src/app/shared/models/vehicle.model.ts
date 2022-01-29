@@ -1,6 +1,6 @@
 import { FuelTypeEnum } from "../enums/fuel-type.enum";
 
-export class Vehicle {
+export class VehicleBase {
   name!: string;
   brandName!: string;
   modelName!: string;
@@ -9,4 +9,10 @@ export class Vehicle {
   licenseNo!: string;
   vin!: string;
   description?: string;
+}
+
+export class VehicleAdd extends VehicleBase { }
+
+export class VehicleEdit extends VehicleBase {
+  id!: string;
 }

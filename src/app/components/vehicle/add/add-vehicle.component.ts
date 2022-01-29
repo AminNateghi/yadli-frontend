@@ -33,13 +33,13 @@ export class AddVehicleComponent implements OnInit {
   initFields() {
     this.form = this.formBuilder.group({
       name: ['', Validators.required],
-      brandName: [''],
-      modelName: [''],
-      year: [''],
-      fuelType: [''],
-      licenseNo: [''],
-      vin: [''],
-      description: [''],
+      brandName: [],
+      modelName: [],
+      year: [],
+      fuelType: [],
+      licenseNo: [],
+      vin: [],
+      description: [],
     });
 
     this.fuelType.push({ key: '0', value: 'Other' });
@@ -52,9 +52,6 @@ export class AddVehicleComponent implements OnInit {
   }
 
   saveClick() {
-    console.log(this.form);
-
-
     if (!this.form.valid) {
       this.notify.warning('Please set name.');
       return;

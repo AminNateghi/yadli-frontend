@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Vehicle } from '@app/shared/models/vehicle.model';
+import { VehicleBase } from '@app/shared/models/vehicle.model';
 import { VehicleService } from '@app/shared/services/vehicle.service';
 import { SharedService } from '../../shared/services/shared.service';
 
@@ -11,7 +11,8 @@ import { SharedService } from '../../shared/services/shared.service';
 })
 export class HomeComponent implements OnInit {
 
-  vehicles: Vehicle[] = [];
+  isLoading = false;
+  vehicles: VehicleBase[] = [];
 
   constructor(
     private router: Router,
@@ -25,10 +26,13 @@ export class HomeComponent implements OnInit {
   }
 
   getData() {
+    this.isLoading = true;
     this.vehicleService.getAll().subscribe(result => {
       if (result.success) {
         this.vehicles = result.data;
       }
+    }).add(() => {
+      this.isLoading = false;
     });
   }
 
