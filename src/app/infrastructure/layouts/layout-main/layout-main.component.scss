@@ -5,3 +5,11 @@
 .body-main {
   @apply flex-grow p-3 sm:p-2;
 }
+
+header {
+  @apply sticky top-0 z-10;
+}
+
+footer {
+  @apply sticky bottom-0;
+}
