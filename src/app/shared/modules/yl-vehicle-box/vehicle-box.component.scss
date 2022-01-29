@@ -1,0 +1,15 @@
+.yl_vehicle-box {
+  @apply flex justify-between items-center bg-gradient-to-b from-white to-gray-200 rounded-2xl shadow-md mb-3 pl-3 pr-3 h-14;
+
+  &__circle {
+    @apply flex justify-center items-center rounded-full bg-gray-200 shadow-inner w-10 h-10;
+  }
+
+  &__caption {
+    @apply flex-1 text-left ml-3 font-bold;
+  }
+
+  &__desc {
+    @apply text-xs font-thin text-gray-500;
+  }
+}
