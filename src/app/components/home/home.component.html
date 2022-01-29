@@ -1,5 +1,7 @@
 <app-loading *ngIf="isLoading"></app-loading>
 
+<app-slider></app-slider>
+
 <div *ngIf="!isLoading">
   <ng-template [ngIf]="vehicles.length === 0">
     <div class="card">

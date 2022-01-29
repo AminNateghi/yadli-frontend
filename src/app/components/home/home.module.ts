@@ -6,6 +6,7 @@ import { HomeComponent } from './home.component';
 import { VehicleService } from '@app/shared/services/vehicle.service';
 import { LoadingModule } from '@app/shared/modules/loading/loading.module';
 import { YlVehicleBoxModule } from '@app/shared/modules/yl-vehicle-box/vehicle-box.module';
+import { YlSliderModule } from '@app/shared/modules/yl-slider/slider.module';
 
 const routes: Routes = [
   {
@@ -22,7 +23,8 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     LoadingModule,
-    YlVehicleBoxModule
+    YlVehicleBoxModule,
+    YlSliderModule
   ],
   providers: [
     VehicleService

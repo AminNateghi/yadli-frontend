@@ -1,0 +1,12 @@
+<section class="section-slider">
+  <div class="slider">
+    <div class="slider-images">
+      <img *ngFor="let item of sliders" src="{{item.imageUrl}}" width="320" class="slide"
+      [attr.alt]="item.imageTitle"
+      [ngClass]="{'display-block': item.display, 'display-none': !item.display}">
+    </div>
+    <div class="slider-indicators-list">
+      <div *ngFor="let item of sliders" class="slider-indicator" [ngClass]="{'selected': item.display}"></div>
+    </div>
+  </div>
+</section>

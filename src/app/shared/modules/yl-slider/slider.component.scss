@@ -1,0 +1,31 @@
+.section-slider {
+  @apply relative mb-3;
+}
+
+.slider-images {
+  @apply flex items-center justify-center h-36 mt-8;
+
+  .slide {
+    @apply rounded-2xl max-w-xs;
+  }
+
+  .display-block {
+    @apply block;
+  }
+
+  .display-none {
+    @apply hidden;
+  }
+}
+
+.slider-indicators-list {
+  @apply flex justify-center items-center w-6 mt-2 mx-auto;
+
+  .slider-indicator {
+    @apply rounded-sm h-0.5 w-1.5 mr-1 opacity-30 bg-gray-700;
+
+    &.selected {
+      @apply w-3 opacity-100;
+    }
+  }
+}
