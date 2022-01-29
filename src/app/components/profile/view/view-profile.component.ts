@@ -35,4 +35,9 @@ export class ViewProfileComponent implements OnInit {
   editClick() {
     this.router.navigate(['profile', 'edit']);
   }
+
+  signoutClick() {
+    localStorage.clear();
+    this.router.navigate(['']);
+  }
 }
