@@ -1,5 +1,5 @@
 <div class="yl_text-box"
-[ngClass]="[hasError ? 'has-error' : '', focused ? 'focused' : '']">
+[ngClass]="[hasError ? 'has-error' : '', focused ? 'focused' : '', readonly ? 'readonly' : '']">
   <div class="yl_text-box__title" [ngClass]="[hasError ? 'has-error' : '']" (click)="focusToInput()">
     {{title}}{{showColon?':':''}}{{required?'*': ''}}</div>
   <input class="yl_text-box__input"

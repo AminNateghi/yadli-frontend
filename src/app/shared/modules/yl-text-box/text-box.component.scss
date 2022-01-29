@@ -9,6 +9,10 @@
     @apply border-black transition duration-300 ease-in;
   }
 
+  &.readonly {
+    @apply border-dashed;
+  }
+
   &__input {
     @apply border-none flex-1 text-right text-black bg-white text-base w-full;
   }
