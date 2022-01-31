@@ -1,5 +1,5 @@
 .footer {
-  @apply flex justify-around items-center h-12;
+  @apply flex justify-around items-center bg-stone-100 h-12;
   @apply dark:bg-slate-700 dark:text-slate-200;
 }
 
