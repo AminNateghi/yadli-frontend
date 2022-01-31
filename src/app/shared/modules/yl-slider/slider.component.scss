@@ -22,7 +22,8 @@
   @apply flex justify-center items-center w-6 mt-2 mx-auto;
 
   .slider-indicator {
-    @apply rounded-sm h-0.5 w-1.5 mr-1 opacity-30 bg-gray-700;
+    @apply rounded-sm h-0.5 w-1.5 mr-1 opacity-40 bg-gray-700;
+    @apply dark:bg-gray-500;
 
     &.selected {
       @apply w-3 opacity-100;

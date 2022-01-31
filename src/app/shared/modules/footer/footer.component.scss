@@ -1,3 +1,10 @@
 .footer {
-  @apply flex justify-around items-center h-12 bg-stone-100;
+  @apply flex justify-around items-center h-12;
+  @apply dark:bg-slate-700 dark:text-slate-200;
+}
+
+::ng-deep {
+  .dark .footer img {
+    filter: brightness(0) invert(1);
+  }
 }

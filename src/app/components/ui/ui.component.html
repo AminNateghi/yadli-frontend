@@ -1,13 +1,14 @@
-<button class="btn-primary">Primary button</button>
-<button class="btn-default" disabled>Disabled button</button>
-<button class="btn-border">Border button</button>
-<button class="btn-agree">Green button</button>
+<button class="btn-primary mr-1">Primary button</button>
+<button class="btn-primary mr-1" disabled>Disabled button</button>
+<button class="btn-border mr-1">Border button</button>
+<button class="btn-agree mr-1">Green button</button>
 <button class="btn-default">Default button</button>
 
 <hr>
 
 <app-text-box></app-text-box>
 <app-text-box [title]="'Name'" [placeholder]="'exp: My BMW'" [required]="true" [value]="''"></app-text-box>
+<app-text-box [title]="'Name'" [readonly]="true" [value]="'readonly'"></app-text-box>
 <app-text-box [title]="'Name:'" [showColon]="false" [placeholder]="'exp: My BMW'" [required]="true" [value]="'value'">
 </app-text-box>
 

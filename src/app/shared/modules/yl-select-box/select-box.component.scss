@@ -1,5 +1,6 @@
 .yl_text-box {
   @apply flex flex-row items-center h-12 w-full px-3 py-0 mb-1 rounded-xl bg-white border-2 border-solid border-gray-400 shadow-inner;
+  @apply dark:bg-gray-900  dark:border-gray-600;
 
   &.has-error {
     @apply border-2 border-solid border-red-600;
@@ -7,14 +8,17 @@
 
   &.focused {
     @apply border-black transition duration-300 ease-in;
+    @apply dark:border-gray-400;
   }
 
   &__input {
     @apply border-none flex-1 text-right text-black bg-white text-base w-full;
+    @apply dark:bg-gray-900 dark:text-white;
   }
 
   &__title {
     @apply text-left text-gray-500 text-sm;
+    @apply dark:text-slate-300;
 
     &.has-error {
       @apply text-red-700;

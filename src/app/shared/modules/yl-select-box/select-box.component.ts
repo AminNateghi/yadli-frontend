@@ -53,7 +53,6 @@ export class YlSelectBoxComponent implements ControlValueAccessor {
 
   focusChange(value: boolean) {
     this.focused = value;
-    this.markAsTouched();
   }
 
   focusToInput() {

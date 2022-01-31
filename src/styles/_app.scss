@@ -23,5 +23,5 @@ body {
   -ms-user-select: none;
   user-select: none;
 
-  background-color: #e5e5e5;
+  @apply bg-gray-200 dark:bg-gray-800;
 }
